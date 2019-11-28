@@ -1,0 +1,3 @@
+[submodule "Kass/vendor/spdlog"]
+	path = Kass/vendor/spdlog
+	url = https://github.com/gabime/spdlog

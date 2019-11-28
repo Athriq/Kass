@@ -57,6 +57,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>KSS_PLATFORM_WINDOWS;KSS_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)Kass\vendor\spdlog\include;$(SolutionDir)Kass\src;</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ksspch.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -68,6 +71,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>KSS_PLATFORM_WINDOWS;KSS_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)Kass\vendor\spdlog\include;$(SolutionDir)Kass\src;</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ksspch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -75,12 +81,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ksspch.h" />
+    <ClInclude Include="src\Kass\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Kass\Events\Event.h" />
+    <ClInclude Include="src\Kass\Events\KeyEvent.h" />
+    <ClInclude Include="src\Kass\Events\MouseEvent.h" />
+    <ClInclude Include="src\Kass\Log.h" />
     <ClInclude Include="src\Kass.h" />
     <ClInclude Include="src\Kass\Application.h" />
     <ClInclude Include="src\Kass\Core.h" />
     <ClInclude Include="src\Kass\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ksspch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Kass\Log.cpp" />
     <ClCompile Include="src\Kass\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
