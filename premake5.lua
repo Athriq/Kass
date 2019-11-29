@@ -87,10 +87,6 @@ project "Sandbox"
 			"KSS_PLATFORM_WINDOWS",
 		}
 
-		postbuildcommands{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
-
 	filter "configurations:Debug"
 		defines "KSS_DEBUG"
 		symbols "On"

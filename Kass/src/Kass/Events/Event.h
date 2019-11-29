@@ -1,4 +1,5 @@
 #pragma once
+#include "ksspch.h"
 
 #include "Kass/Core.h"
 
