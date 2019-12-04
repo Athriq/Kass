@@ -22,7 +22,7 @@ namespace Kass {
 		if (e.IsInCategory(EventCategoryInput)) {
 			KSS_TRACE(e);
 		}
-
+		
 		while (true);
 	}
 }
